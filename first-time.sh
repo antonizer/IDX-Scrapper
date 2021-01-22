@@ -1,7 +1,7 @@
 # make folder
 mkdir -p "data/List Emiten"
-mkdir -p "data/saham/semua"
-mkdir -p "data/saham/LQ45"
+mkdir -p "data/Saham/Semua"
+mkdir -p "data/Saham/LQ45"
 
 # install requirements
 pip3 install -r requirements.txt

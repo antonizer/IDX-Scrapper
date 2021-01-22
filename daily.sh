@@ -1,7 +1,7 @@
 # hapus saham-saham LQ45
 # agar listnya selalu update
 # hanya dgn mengupdate LQ45.csv
-rm data/saham/LQ45/*
+rm data/Saham/LQ45/*
 
 # jalanin script
 # utk update emiten
