@@ -8,3 +8,7 @@ rm data/Saham/LQ45/*
 # dan data emiten
 python3 get-list-emiten.py
 python3 get-data-harian-emiten.py
+
+# jalanin daily.sh dalam folder data
+# untuk ngepush ke github dan kaggle
+sh data/daily.sh
