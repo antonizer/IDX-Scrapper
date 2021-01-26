@@ -29,7 +29,7 @@ for code in kode_emiten:
 			result = http.request('GET', link)
 			result = json.loads(result.data.decode('utf-8'))
 
-			# success, we brake the while loop
+			# success, we stop the while loop
 			break
 		except:
 			# error, we sleep for 2 minutes
@@ -42,6 +42,13 @@ for code in kode_emiten:
 
 		# loop diloncati
 		continue
+	else:
+		# load data lama
+		history = pd.read_csv(f"data/Saham/Semua/{code}.csv")
+
+		# hk -> hari kerja
+		hk_terakhir = history.tail(1)
+		hk_terakhir = hk_terakhir['date'].values
 
 	# data-data
 	date = []
@@ -72,31 +79,34 @@ for code in kode_emiten:
 
 	# simpan data-data
 	for data in result["replies"][::-1]:
-		date.append(data['Date'])
-		previous.append(data['Previous'])
-		openPrice.append(data['OpenPrice'])
-		firstTrade.append(data['FirstTrade'])
-		high.append(data['High'])
-		low.append(data['Low'])
-		close.append(data['Close'])
-		change.append(data['Change'])
-		volume.append(data['Volume'])
-		value.append(data['Value'])
-		frequency.append(data['Frequency'])
-		indexIndividual.append(data['IndexIndividual'])
-		offer.append(data['Offer'])
-		offerVolume.append(data['OfferVolume'])
-		bid.append(data['Bid'])
-		bidVolume.append(data['BidVolume'])
-		listedShares.append(data['ListedShares'])
-		tradebleShares.append(data['TradebleShares'])
-		weightForIndex.append(data['WeightForIndex'])
-		foreignSell.append(data['ForeignSell'])
-		foreignBuy.append(data['ForeignBuy'])
-		delistingDate.append(data['DelistingDate'])
-		nonRegularVolume.append(data['NonRegularVolume'])
-		nonRegularValue.append(data['NonRegularValue'])
-		nonRegularFrequency.append(data['NonRegularFrequency'])
+		# hari kerja?
+		if data['Date'] != hk_terakhir:
+			# ya
+			date.append(data['Date'])
+			previous.append(data['Previous'])
+			openPrice.append(data['OpenPrice'])
+			firstTrade.append(data['FirstTrade'])
+			high.append(data['High'])
+			low.append(data['Low'])
+			close.append(data['Close'])
+			change.append(data['Change'])
+			volume.append(data['Volume'])
+			value.append(data['Value'])
+			frequency.append(data['Frequency'])
+			indexIndividual.append(data['IndexIndividual'])
+			offer.append(data['Offer'])
+			offerVolume.append(data['OfferVolume'])
+			bid.append(data['Bid'])
+			bidVolume.append(data['BidVolume'])
+			listedShares.append(data['ListedShares'])
+			tradebleShares.append(data['TradebleShares'])
+			weightForIndex.append(data['WeightForIndex'])
+			foreignSell.append(data['ForeignSell'])
+			foreignBuy.append(data['ForeignBuy'])
+			delistingDate.append(data['DelistingDate'])
+			nonRegularVolume.append(data['NonRegularVolume'])
+			nonRegularValue.append(data['NonRegularValue'])
+			nonRegularFrequency.append(data['NonRegularFrequency'])
 
 	# data beres, simpan dalam CSV
 	hari_ini = pd.DataFrame({
@@ -126,9 +136,6 @@ for code in kode_emiten:
 			'non_regular_value': nonRegularValue,
 			'non_regular_frequency': nonRegularFrequency,
 		})
-
-	# load data lama
-	history = pd.read_csv(f"data/Saham/Semua/{code}.csv")
 
 	# jadikan satu dgn yang lama
 	new_data = pd.concat([history, hari_ini], ignore_index=True)
