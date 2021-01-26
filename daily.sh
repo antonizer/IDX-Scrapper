@@ -1,3 +1,6 @@
+# cd dulu
+cd ~/idx-scrapper
+
 # hapus saham-saham LQ45
 # agar listnya selalu update
 # hanya dgn mengupdate LQ45.csv
