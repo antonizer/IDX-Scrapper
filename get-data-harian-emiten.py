@@ -27,6 +27,7 @@ for code in kode_emiten:
 	while True:
 		try:
 			result = http.request('GET', link)
+			result = http.request('GET', link)
 			result = json.loads(result.data.decode('utf-8'))
 
 			# success, we stop the while loop
@@ -78,7 +79,7 @@ for code in kode_emiten:
 
 		# hk -> hari kerja
 		hk_terakhir = history.tail(1)
-		hk_terakhir = hk_terakhir['date'].values
+		hk_terakhir = hk_terakhir['date'].item()
 
 	# data-data
 	date = []
