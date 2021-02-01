@@ -43,8 +43,38 @@ for code in kode_emiten:
 		# loop diloncati
 		continue
 	else:
-		# load data lama
-		history = pd.read_csv(f"data/Saham/Semua/{code}.csv")
+		try:
+			# load data lama
+			history = pd.read_csv(f"data/Saham/Semua/{code}.csv")
+		except:
+			# ga ada data lama, baru IPO
+			history = pd.DataFrame({
+				'date': [],
+				'previous': [],
+				'open_price': [],
+				'first_trade': [],
+				'high': [],
+				'low': [],
+				'close': [],
+				'change': [],
+				'volume': [],
+				'value': [],
+				'frequency': [],
+				'index_individual': [],
+				'offer': [],
+				'offer_volume': [],
+				'bid': [],
+				'bid_volume': [],
+				'listed_shares': [],
+				'tradeble_shares': [],
+				'weight_for_index': [],
+				'foreign_sell': [],
+				'foreign_buy': [],
+				'delisting_date': [],
+				'non_regular_volume': [],
+				'non_regular_value': [],
+				'non_regular_frequency': [],
+			})
 
 		# hk -> hari kerja
 		hk_terakhir = history.tail(1)
