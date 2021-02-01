@@ -77,10 +77,6 @@ for code in kode_emiten:
 				'non_regular_frequency': [],
 			})
 
-		# hk -> hari kerja
-		hk_terakhir = history.tail(1)
-		hk_terakhir = hk_terakhir['date'].item()
-
 	# data-data
 	date = []
 	previous = []
@@ -111,7 +107,7 @@ for code in kode_emiten:
 	# simpan data-data
 	for data in result["replies"][::-1]:
 		# hari kerja?
-		if data['Date'] != hk_terakhir:
+		if data['Date'] not in history.date.values:
 			# ya
 			date.append(data['Date'])
 			previous.append(data['Previous'])
