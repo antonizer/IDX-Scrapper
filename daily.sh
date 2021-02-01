@@ -14,4 +14,5 @@ python3 get-data-harian-emiten.py
 
 # jalanin daily.sh dalam folder data
 # untuk ngepush ke github dan kaggle
-sh data/daily.sh
+cd data
+sh daily.sh
