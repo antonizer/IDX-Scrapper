@@ -1,4 +1,6 @@
-## IDX Scrapper
+# IDX Scrapper
+
+## Overview
 
 IDX Scrapper merupakan sebuah scrapper yang dibuat menggunakan bahasa Python. Scrapper ini memanfaatkan endpoint-endpoint dari API yang dimiliki oleh PT Bursa Efek Indonesia (BEI) pada websitenya yaitu [idx.co.id](https://idx.co.id).
 
