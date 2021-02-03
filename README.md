@@ -4,7 +4,7 @@
 
 IDX Scrapper merupakan sebuah scrapper yang dibuat menggunakan bahasa Python. Scrapper ini memanfaatkan endpoint-endpoint dari API yang dimiliki oleh PT Bursa Efek Indonesia (BEI) pada websitenya yaitu [idx.co.id](https://idx.co.id).
 
-Apabila Anda tertarik untuk melihat dataset yang dihasilkan dari scrapper ini, kunjungi repository saya yang berisi dataset dengan mengklik [ini](https://github.com/wildangunawan/Dataset-Saham-IDX).
+Apabila Anda tertarik untuk melihat dataset yang dihasilkan dari scrapper ini, kunjungi repository saya yang berisi dataset di [sini](https://github.com/wildangunawan/Dataset-Saham-IDX).
 
 ## Cara Penggunaan
 
@@ -29,4 +29,4 @@ Pengguna scrapper ini dilarang keras untuk menggunakan informasi untuk tujuan ko
 
 Projek ini dilisensikan dengan CC BY-NC 4.0. Lisensi ini membatasi Anda untuk tidak menggunakan data atau apapun yang berhubungan dengan projek ini untuk tujuan komersial.
 
-Anda dapat membaca lisensi di [sini](LICENSE.md). Rangkuman pendek dari lisensi ini dapat Anda baca [di sini](https://creativecommons.org/licenses/by-nc/4.0/)
+Anda dapat membaca lisensi di [sini](LICENSE.md). Rangkuman pendek dari lisensi ini dapat Anda baca di [sini](https://creativecommons.org/licenses/by-nc/4.0/)
