@@ -13,7 +13,7 @@ Anda dapat langsung menggunakan script yang ada dengan meng-clone atau download 
 pip install -r requirements.txt
 ```
 
-Untuk penggunaan pertama kali, jalankan file [first-time.sh](first-time.sh). File ini akan mengambil data dari PT Bursa Efek Indonesia sampai dengan 365 hari kerja kebelakang mulai dari saat Anda menjalankannya. Anda dapat mengubah durasi waktu ini dengan mengedit `length` pada file tersebut menjadi banyak hari kerja yang Anda inginkan.
+Untuk penggunaan pertama kali, jalankan file [first-time.sh](first-time.sh). File ini membuat folder-folder dan akan menjalankan script [get-data-tahunan-emiten.py](get-data-tahunan-emiten.py) yang akan mengambil data dari PT Bursa Efek Indonesia sampai dengan 365 hari kerja kebelakang mulai dari saat Anda menjalankannya. Anda dapat mengubah durasi waktu ini dengan mengedit `length` pada [get-data-tahunan-emiten.py](get-data-tahunan-emiten.py) menjadi banyak hari kerja yang Anda inginkan.
 
 Untuk meng-update data setiap hari, jalankan [daily.sh](daily.sh). Script ini akan mengambil data dari BEI setiap harinya dan menambahkannya ke dalam data yang telah Anda simpan sebelumnya. Anda dapat menjalankan script ini secara otomatis pada server Anda dengan menggunakan cronjob. Saya sarankan Anda untuk menjalankannya pada pukul 17.00 WIB setiap hari kerja saja.
 
