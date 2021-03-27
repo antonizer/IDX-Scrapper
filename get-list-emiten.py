@@ -1,4 +1,4 @@
-import urllib3, json
+import cfscrape, json
 import pandas as pd
 
 # mulai dari 0
@@ -26,15 +26,15 @@ lq45_shares = []
 lq45_listingBoard = []
 
 # http client
-http = urllib3.PoolManager()
+http = cfscrape.create_scraper()
 
 while True:
 	# buat link
 	link = f"https://idx.co.id/umbraco/Surface/StockData/GetSecuritiesStock?code=&sector=&board=&start={start}&length={length}"
 
 	# send request
-	result = http.request('GET', link)
-	result = json.loads(result.data.decode('utf-8'))
+	result = http.get(link).text
+	result = json.loads(result)
 
 	# result empty?
 	# kalo iya, berarti daftar

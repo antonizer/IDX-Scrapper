@@ -1,4 +1,4 @@
-import urllib3, json
+import cfscrape, json
 import pandas as pd
 from time import sleep
 
@@ -15,7 +15,7 @@ kode_emiten = emiten['code'].values
 kode_lq45 = lq45['code'].values
 
 # http client
-http = urllib3.PoolManager()
+http = cfscrape.create_scraper()
 
 for code in kode_emiten:
 	# link
@@ -26,9 +26,10 @@ for code in kode_emiten:
 	# request whenever failed
 	while True:
 		try:
-			result = http.request('GET', link)
-			result = http.request('GET', link)
-			result = json.loads(result.data.decode('utf-8'))
+			# send request
+			result = http.get(link).text
+			result = http.get(link).text
+			result = json.loads(result)
 
 			# success, we stop the while loop
 			break
