@@ -1,4 +1,4 @@
-import cfscrape, json
+import cloudscraper, json
 import pandas as pd
 
 # mulai dari 0
@@ -26,7 +26,7 @@ lq45_shares = []
 lq45_listingBoard = []
 
 # http client
-http = cfscrape.create_scraper()
+http = cloudscraper.CloudScraper()
 
 while True:
 	# buat link

@@ -1,4 +1,4 @@
-import cfscrape, json
+import cloudscraper, json
 import pandas as pd
 from time import sleep
 
@@ -16,7 +16,7 @@ emiten = emiten['code'].values
 lq45 = lq45['code'].values
 
 # http client
-http = cfscrape.create_scraper()
+http = cloudscraper.CloudScraper()
 
 for code in emiten:
 	# link
